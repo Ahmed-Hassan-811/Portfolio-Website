@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Hassan - Front-End Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Home Page -->
+    <div class="page active" id="home-page">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-page="home-page">Home</a>
+                <a href="#about" class="nav-link" data-page="about-page">About</a>
+                <a href="#resume" class="nav-link" data-page="resume-page">Resume</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>+92 300-5343862</span>
+            </div>
+        </nav>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-name">AHMED<br><span class="highlight">HASSAN</span></h1>
+                <p class="hero-title">Vibe-Coding-based Front-end Web Developer</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-outline" data-page="resume-page">Resume</button>
+                    <button class="btn btn-outline">Portfolio</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="workspace.jpg" alt="Workspace" id="workspace-img">
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <button class="fullscreen-btn" id="fullscreen-toggle">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
+
+    <!-- About Page -->
+    <div class="page" id="about-page">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home" class="nav-link" data-page="home-page">Home</a>
+                <a href="#about" class="nav-link active" data-page="about-page">About</a>
+                <a href="#resume" class="nav-link" data-page="resume-page">Resume</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>+92 300-5343862</span>
+            </div>
+        </nav>
+
+        <div class="about-section">
+            <div class="about-content">
+                <h2 class="section-title">ABOUT</h2>
+                <p class="email">ahassan1020507@gmail.com</p>
+                <p class="bio">
+                    I'm a biotech 4th-semester student who loves to use computational tech and AI tools for daily
+                    productivity. With a passion for creating engaging web experiences, I specialize in
+                    vibe-coding-based front-end development.
+                </p>
+                <p class="bio">
+                    My approach combines creative problem-solving with modern development practices. I leverage tools
+                    like Claude.ai and Gemini to enhance my workflow and build intuitive, user-friendly interfaces. My
+                    greatest strength is adapting quickly to new technologies and transforming ideas into functional,
+                    beautiful web applications.
+                </p>
+                <p class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Islamabad, Pakistan
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="Using-Laptop.jpg" alt="Ahmed Hassan" id="profile-img">
+            </div>
+        </div>
+
+        <button class="fullscreen-btn" id="fullscreen-toggle-about">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
+
+    <!-- Resume Page -->
+    <div class="page" id="resume-page">
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#home" class="nav-link" data-page="home-page">Home</a>
+                <a href="#about" class="nav-link" data-page="about-page">About</a>
+                <a href="#resume" class="nav-link active" data-page="resume-page">Resume</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>+92 300-5343862</span>
+            </div>
+        </nav>
+
+        <div class="resume-section">
+            <div class="resume-column">
+                <h3 class="column-title">SOFTWARE SKILLS</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <i class="fab fa-figma"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 60%"></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <h3 class="column-title">LANGUAGES</h3>
+                <div class="language-item">
+                    <span>English</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span>Urdu</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span>Japanese</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 30%"></div>
+                    </div>
+                </div>
+
+                <br>
+
+                <h3 class="column-title">PERSONAL SKILLS</h3>
+                <p class="personal-skills">Creativity • Problem Solving • Quick Learning • AI-Enhanced Productivity</p>
+            </div>
+
+            <div class="resume-column">
+                <h3 class="column-title">EXPERIENCE</h3>
+                <p class="no-experience">Currently building skills and seeking opportunities to apply my knowledge in
+                    real-world projects.</p>
+
+                <br><br>
+
+                <h3 class="column-title">EDUCATION</h3>
+                <div class="education-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h4>Generative AI Application Developer Certificate</h4>
+                        <p>UETIANS Lahore Endowment Foundation, USA</p>
+                        <p class="edu-details">In collaboration with NCEAC, PAKANGELS, Icode Guru & ASPIRE PAKISTAN</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h4>Biotechnology Student (4th Semester)</h4>
+                        <p>Currently pursuing undergraduate studies</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="edu-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="edu-content">
+                        <h4>Prompt Engineering for ChatGPT</h4>
+                        <p>VANDERBILT UNIVERSITY</p>
+                        <p class="edu-details">In collaboration with COURSERA</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-column">
+                <h3 class="column-title">WHAT CAN I DO?</h3>
+                <ul class="services-list">
+                    <li>Responsive Web Development</li>
+                    <li>HTML5 Semantic Markup</li>
+                    <li>CSS3 Styling & Animations</li>
+                    <li>JavaScript Interactivity</li>
+                    <li>AI-Enhanced Development</li>
+                    <li>UI/UX Implementation</li>
+                </ul>
+
+                <br>
+
+                <h3 class="column-title">DESIGN SKILLS</h3>
+                <ul class="design-skills-list">
+                    <li>Creative Problem Solving</li>
+                    <li>User Interface Design</li>
+                    <li>Responsive Layouts</li>
+                    <li>Modern Web Aesthetics</li>
+                    <li>Figma Prototyping</li>
+                </ul>
+
+                <br>
+
+                <h3 class="column-title">HOBBIES & INTERESTS</h3>
+                <div class="hobbies-grid">
+                    <div class="hobby-item">
+                        <i class="fas fa-tv"></i>
+                        <span>Watching Anime</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-book"></i>
+                        <span>Fiction Reading</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Critical Thinking</span>
+                    </div>
+                    <div class="hobby-item">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="fullscreen-btn" id="fullscreen-toggle-resume">
+            <i class="fas fa-expand"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
