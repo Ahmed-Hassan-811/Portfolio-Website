@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #0a1628;
+    --secondary-bg: #0f1e33;
+    --accent-color: #00bcd4;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --highlight-color: #64ffda;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Page Management */
+.page {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(15, 30, 51, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color);
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.contact-info i {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 3rem;
+    min-height: calc(100vh - 80px);
+    position: relative;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-name {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-name .highlight {
+    color: var(--text-primary);
+    font-weight: 900;
+}
+
+.hero-title {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: var(--text-primary);
+    color: var(--primary-bg);
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 600px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Social Links */
+.social-links {
+    position: fixed;
+    bottom: 2rem;
+    left: 3rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Fullscreen Button */
+.fullscreen-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 3rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.fullscreen-btn:hover {
+    background: var(--accent-color);
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 3rem;
+    min-height: calc(100vh - 80px);
+    gap: 4rem;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.email {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.bio {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.location {
+    color: var(--text-secondary);
+    margin-top: 3rem;
+    font-size: 1rem;
+}
+
+.location i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Resume Section */
+.resume-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 3rem;
+    min-height: calc(100vh - 80px);
+}
+
+.resume-column {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.column-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Skills */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-header i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+    border-radius: 10px;
+    transition: width 1s ease-out;
+    position: relative;
+}
+
+/* Languages */
+.language-item {
+    margin-bottom: 1.2rem;
+}
+
+.language-item span {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+/* Personal Skills */
+.personal-skills {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* Experience */
+.no-experience {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Education */
+.education-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.edu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.edu-icon i {
+    font-size: 1.5rem;
+    color: var(--primary-bg);
+}
+
+.edu-content h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.edu-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.edu-details {
+    margin-top: 0.3rem;
+    font-size: 0.85rem !important;
+}
+
+/* Services */
+.services-list,
+.design-skills-list {
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.services-list li,
+.design-skills-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.services-list li::before,
+.design-skills-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Hobbies */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.hobby-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hobby-item:hover {
+    background: rgba(0, 188, 212, 0.1);
+    transform: translateY(-3px);
+}
+
+.hobby-item i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+}
+
+.hobby-item span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .resume-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section,
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-image,
+    .about-image {
+        justify-content: center;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-name {
+        font-size: 3rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .social-links {
+        position: static;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    
+    .fullscreen-btn {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+}
