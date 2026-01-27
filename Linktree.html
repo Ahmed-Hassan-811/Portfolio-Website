@@ -4,74 +4,368 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href="style.css" rel="stylesheet" /> -->
+    <title>Ahmed Hassan - Portfolio</title>
     <style>
-        img {
-            border-radius: 75px;
-        }
-
-        a {
-            background-color: rgb(52, 14, 72);
-            font-size: 20px;
-            border-radius: 10px;
-            padding: 10px;
-            display: block;
-            text-align: center;
-            margin: 10px;
-            color: rgb(253, 253, 253);
-        }
-
-        h2 {
-            font-size: 18px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             background-color: rgb(74, 77, 91);
-            font-family: Trebuchet MS;
+            font-family: 'Trebuchet MS', sans-serif;
             color: rgb(253, 253, 252);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            border-radius: 75px;
+            height: 150px;
+            width: 150px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: rgb(253, 253, 252);
+        }
+
+        .bio {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: rgb(253, 253, 252);
+            border-bottom: 3px solid rgb(52, 14, 72);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .social-link {
+            background: linear-gradient(135deg, rgb(52, 14, 72), rgb(82, 34, 112));
+            font-size: 18px;
+            border-radius: 10px;
+            padding: 15px;
+            text-decoration: none;
+            color: rgb(253, 253, 253);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(52, 14, 72, 0.5);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(52, 14, 72, 0.8), rgba(82, 34, 112, 0.6));
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid rgba(253, 253, 252, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(253, 253, 252, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+            color: rgb(253, 253, 252);
+        }
+
+        .project-description {
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: rgba(253, 253, 252, 0.9);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background-color: rgba(253, 253, 252, 0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: rgb(253, 253, 252);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            background-color: rgb(52, 14, 72);
+            color: rgb(253, 253, 253);
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+            flex: 1;
             text-align: center;
         }
 
-        p {
-            border: 20px;
+        .project-link:hover {
+            background-color: rgb(82, 34, 112);
         }
 
-        footer {
-            position: center-fixed;
-            text-align: center, bottom;
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
         }
-        bottom {
-            position: bottom;
+
+        .skill-badge {
+            background: linear-gradient(135deg, rgb(52, 14, 72), rgb(82, 34, 112));
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(253, 253, 252, 0.2);
+        }
+
+        .copyright {
+            font-size: 0.9em;
+            color: rgba(253, 253, 252, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <img src="./My_Pic.png" Alt="How Ahmed looks like from Camera view."
-            height="150" width="150" />
-        <h1>AHMED HASSAN</h1>
-        <!-- <h2>I'm a Biotechnology Student .</h2> -->
-        <p>
-            I’m <strong>Ahmed</strong>, a <em>biotech learner</em> who
-            <em>codes by day</em> and <em>creates 2D animations</em> by night,
-            blending science and art.
-        </p>
-    </header>
-    <main>
-        <p>Welcome to My Linkteee.</p>
-        <a href="https://www.linkedin.com/in/ahmed-hassan-siddique" target="_blank">LinkedIn.</a>
-        <a href="https://www.instagram.com/ahassan1020507/" target="_blank">Instagram.</a>
-        <a href="https://github.com/Ahmed-Hassan-811" target="_blank">Github.</a>
-        <a href="https://www.facebook.com/profile.php?id=61565042157717" target="_blank">Facebook.</a>
-    </main>
-    </main>
-    <footer>
-        <bottom>
-            <p class="copyright">AHMED HASSAN © 2025</p>
-        </bottom>
-    </footer>
-</body>
+    <div class="container">
+        <header>
+            <img src="./My_Pic.png" alt="How Ahmed looks like from Camera view." class="profile-img" />
+            <h1>AHMED HASSAN</h1>
+            <p class="bio">
+                I'm <strong>Ahmed</strong>, a <em>biotech learner</em> who
+                <em>codes by day</em> and <em>creates 2D animations</em> by night,
+                blending science and art.
+            </p>
+        </header>
 
+        <!-- Social Links Section -->
+        <section class="section">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ahmed-hassan-siddique" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/Ahmed-Hassan-811" target="_blank" class="social-link">GitHub</a>
+                <a href="https://www.instagram.com/ahassan1020507/" target="_blank" class="social-link">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61565042157717" target="_blank" class="social-link">Facebook</a>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3 class="project-title">🚀 Unified Dashboard</h3>
+                    <p class="project-description">
+                        Unified personal dashboard - Track media, projects, and personal growth.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://media-project-growth-tracker.netlify.app/" class="project-link" target="_blank">View Demo</a>
+                        <a href="https://github.com/Ahmed-Hassan-811/Media-Project-Growth-Tracker/tree/main" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3 class="project-title">Sudoku Game</h3>
+                    <p class="project-description">
+                        A 9x9 grid divided into nine 3x3 sub-grids, where numbers 1-9 must be filled in without repetition in each row, column, and sub-grid.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sudoku-game-ahmed-hassan-811.netlify.app/sudoku-game" class="project-link" target="_blank">Sudoku Game</a>
+                        <a href="https://github.com/Ahmed-Hassan-811/Games/tree/main" class="project-link" target="_blank">Github</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3 class="project-title">💻 Personal Portfolio Website</h3>
+                    <p class="project-description">
+                        A responsive and modern portfolio website built with HTML, CSS, and JavaScript to showcase my work and skills.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://ahmed-portfolio-811.netlify.app/static-webpage/index.html" class="project-link" target="_blank">Live Site</a>
+                        <a href="https://github.com/Ahmed-Hassan-811/Portfolio-Website/tree/main/static-webpage" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3 class="project-title">🔬 Lab Equipment Tracker</h3>
+                    <p class="project-description">
+                        Web application for managing laboratory equipment inventory, maintenance schedules, and usage logs.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank">View Demo</a>
+                        <a href="#" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <h3 class="project-title">📊 Research Data Dashboard</h3>
+                    <p class="project-description">
+                        Interactive dashboard for visualizing experimental data with real-time updates and statistical analysis tools.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank">View Demo</a>
+                        <a href="#" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card">
+                    <h3 class="project-title">🎬 Animation Tutorial Series</h3>
+                    <p class="project-description">
+                        Comprehensive video tutorial series teaching 2D animation fundamentals from beginner to advanced techniques.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Video Editing</span>
+                        <span class="tech-tag">Animation</span>
+                        <span class="tech-tag">Teaching</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link" target="_blank">Watch Series</a>
+                        <a href="#" class="project-link" target="_blank">Resources</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">HTML/CSS</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">BioPython</span>
+                <span class="skill-badge">Data Analysis</span>
+                <span class="skill-badge">2D Animation</span>
+                <span class="skill-badge">Adobe Suite</span>
+                <span class="skill-badge">Git/GitHub</span>
+                <span class="skill-badge">Biotechnology</span>
+                <span class="skill-badge">Lab Research</span>
+            </div>
+        </section>
+
+        <footer>
+            <p class="copyright">AHMED HASSAN © 2025</p>
+        </footer>
+    </div>
+</body>
 
 </html>
